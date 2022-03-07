@@ -11,20 +11,20 @@
 //Defines names for use in layer keycodes and the keymap
 enum layer_names {
   _BASE = 0,
-  _L1,
-  _L2,
-  _L3,
-  _L4,
+    _L1,
+    _L2,
+    _L3,
+    _L4,
+    _L5,
+    _L6,
 };
 
 //Macro Definitions
 enum custom_keycodes {
   minim = SAFE_RANGE, //restore window down/minimize window
   os_perp,  //perpindicular o-snap
-  os_node,  //node o-snap
   scale,    //scale command
   dtxt,     //d-text command
-  fil,      //fillet command, uses multiple sub-command
   trim,     //trim command
   j_key,    //just inputs j_enter, used for both justification and join
   stre,     //stretch command
@@ -33,6 +33,11 @@ enum custom_keycodes {
   mid,      //mid-point o-snap
   str_sft,  //press for str macro hold for shift function
 	n_win,	//to open a new acrobat window and restore it down
+    oflne,  //set Microsoft Teams status to offline
+    avbl,   //set Microsoft Teams status to available
+    away,   //set Microsoft Teams status to away
+    brb,    //set Microsoft Teams status to be right back
+    xdist,  //set Microsoft Teams status to do not disturb
 };
 
 /* This is a little extra that was mentioned by u/riding_qwerty
@@ -59,13 +64,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } else {
       }
       break;
-    case os_node:
-      if (record->event.pressed)  {
-        //when key with this macro assignment is pressed:
-        SEND_STRING("node" SS_TAP(X_ENT));
-      } else {
-      }
-      break;
     case scale:
       if (record->event.pressed)  {
         //when key with this macro assignment is pressed:
@@ -77,13 +75,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed)  {
         //when key with this macro assignment is pressed:
         SEND_STRING("dt" SS_TAP(X_ENT));
-      } else {
-      }
-      break;
-    case fil:
-      if (record->event.pressed)  {
-        //when key with this macro assignment is pressed:
-        SEND_STRING("fil" SS_TAP(X_ENT) SS_DELAY(200) "m" SS_TAP(X_ENT));
       } else {
       }
       break;
@@ -145,6 +136,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         		//when key with this macro assignment is released:
 		}
 		break;
+    case oflne:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "Off" SS_TAP(X_ENT));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break;      
    	}
     return true;
 };
@@ -172,8 +171,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_L1] = LAYOUT(
     era,        mid,            p_ln,
-    os_perp,    _______,        fil,
-    os_node,    TG(_L2),        TG(_L3)
+    os_perp,    _______,        TG(_L6),
+    TG(_L5),    TG(_L2),        TG(_L3)
   ),
 
   [_L2] = LAYOUT(
@@ -192,7 +191,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RESET,     XXXXXXX,        RGB_VAI,
     XXXXXXX,     XXXXXXX,        RGB_VAD,
     XXXXXXX,     XXXXXXX,        RGB_TOG
-  )
+  ),
+    
+    [_L5] = LAYOUT(
+    RCS(KC_C),     RCS(KC_K),        RCS(KC_O),
+    LGUI(KC_3),     TG(_L5),        XXXXXXX,
+    C(KC_SPC),     RCS(KC_M),        C(KC_SPC)
+  ),
+        
+    [_L6] = LAYOUT(
+    oflne,     XXXXXXX,        XXXXXXX,
+    away,     TG(_L6),        avbl,
+    brb,     xdisp,        brb
+  )          
 };
 
 void matrix_init_user(void) {
