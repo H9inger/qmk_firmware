@@ -136,14 +136,46 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         		//when key with this macro assignment is released:
 		}
 		break;
-    case oflne:
+  case oflne:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "Off" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "off" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
-		break;      
+		break;
+  case avbl:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "avail" SS_TAP(X_ENT));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break; 
+  case away:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "away" SS_TAP(X_ENT));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break;
+  case brb:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "brb" SS_TAP(X_ENT));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break;
+  case xdist:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "do" SS_TAP(X_ENT));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break;
    	}
     return true;
 };
@@ -158,7 +190,7 @@ enum {
 
 //Actual layer layout definitions
 
-#define _______ KC_TRNS
+//#define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -202,7 +234,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_L6] = LAYOUT(
     oflne,     XXXXXXX,        XXXXXXX,
     away,     TG(_L6),        avbl,
-    brb,     xdisp,        brb
+    brb,     xdist,        brb
   )          
 };
 
