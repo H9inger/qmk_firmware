@@ -147,7 +147,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case avbl:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
+			SEND_STRING(SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
@@ -171,11 +171,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case xdist:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "do" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "dnd" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
 		break;
+  case avbl_2:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break;        
    	}
     return true;
 };
@@ -232,7 +240,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
         
     [_L6] = LAYOUT(
-    oflne,     XXXXXXX,        XXXXXXX,
+    oflne,     XXXXXXX,        avbl_2,
     away,     TG(_L6),        avbl,
     brb,     xdist,        brb
   )          
