@@ -34,10 +34,11 @@ enum custom_keycodes {
   str_sft,  //press for str macro hold for shift function
 	n_win,	//to open a new acrobat window and restore it down
     oflne,  //set Microsoft Teams status to offline
-    avbl,   //set Microsoft Teams status to available
+    avbl,   //set Microsoft Teams status to available w/o opening Teams first
     away,   //set Microsoft Teams status to away
     brb,    //set Microsoft Teams status to be right back
     xdist,  //set Microsoft Teams status to do not disturb
+    avbl_2,   //set Microsoft Teams status to available
 };
 
 /* This is a little extra that was mentioned by u/riding_qwerty
