@@ -263,11 +263,11 @@ void matrix_scan_user(void) {
 				//teal
 				break;
 			case _L2:
-				rgblight_setrgb(0x31, 0x1d, 0x00);
+				rgblight_setrgb(0x31, 0x1D, 0x00);
 				//orange
 				break;
 			case _L3:
-				rgblight_setrgb(0x4d, 0x00, 0x00);
+				rgblight_setrgb(0x4D, 0x00, 0x00);
 				//red
 				break;
 			case _L4:
@@ -275,11 +275,11 @@ void matrix_scan_user(void) {
 				//pink
 				break;
       case _L5:
-				rgblight_setrgb(0x3e, 0x0a, 0x7f);
+				rgblight_setrgb(0x6C, 0x17, 0xD8);
 				//purple
 				break;
       case _L6:
-				rgblight_setrgb(0x00, 0x66, 0x0b);
+				rgblight_setrgb(0x00, 0x66, 0x0B);
 				//green
 				break;    
 		}
