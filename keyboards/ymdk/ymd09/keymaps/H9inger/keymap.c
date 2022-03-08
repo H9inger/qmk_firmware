@@ -275,7 +275,7 @@ void matrix_scan_user(void) {
 				//pink
 				break;
       case _L5:
-				rgblight_setrgb(0x43, 0x00, 0x66);
+				rgblight_setrgb(0x3e, 0x0a, 0x7f);
 				//purple
 				break;
       case _L6:
