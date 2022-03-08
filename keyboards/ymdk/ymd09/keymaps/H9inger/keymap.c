@@ -139,7 +139,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case oflne:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "off" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "off" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
@@ -147,7 +147,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case avbl:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "avail" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
@@ -155,7 +155,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case away:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "away" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "away" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
@@ -163,7 +163,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case brb:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "brb" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "brb" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
@@ -171,7 +171,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case xdist:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") "do" SS_TAP(X_ENT));
+			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "do" SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
