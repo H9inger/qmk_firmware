@@ -217,7 +217,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_L2] = LAYOUT(
-    KC_ESC,     XXXXXXX,        KC_WFAV,
+    KC_WFAV,     XXXXXXX,        RCS(KC_O),
     LT(_L4, KC_WBAK),    TG(_L2),      KC_WFWD,
     KC_LCTL,    C(KC_W),        minim
   ),
