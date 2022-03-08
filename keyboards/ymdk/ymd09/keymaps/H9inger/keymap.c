@@ -271,9 +271,17 @@ void matrix_scan_user(void) {
 				//red
 				break;
 			case _L4:
-				rgblight_setrgb(0x33, 0x00, 0x66);
+				rgblight_setrgb(0x66, 0x00, 0x58);
+				//pink
+				break;
+      case _L5:
+				rgblight_setrgb(0x43, 0x00, 0x66);
 				//purple
 				break;
+      case _L6:
+				rgblight_setrgb(0x00, 0x66, 0x0b);
+				//green
+				break;    
 		}
 
 		old_layer = new_layer;
