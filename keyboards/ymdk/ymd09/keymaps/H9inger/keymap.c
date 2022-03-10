@@ -39,6 +39,7 @@ enum custom_keycodes {
     brb,    //set Microsoft Teams status to be right back
     xdist,  //set Microsoft Teams status to do not disturb
     avbl_2,   //set Microsoft Teams status to available
+    mst_call,   //focuses to Teams call
 };
 
 /* This is a little extra that was mentioned by u/riding_qwerty
@@ -184,7 +185,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		} else {
         		//when key with this macro assignment is released:
 		}
-		break;        
+		break;
+  case mst_call:
+		if (record->event.pressed)  {
+			//when key with this macro assignment is pressed:
+			SEND_STRING(SS_LGUI("33"));
+		} else {
+        		//when key with this macro assignment is released:
+		}
+		break; 
    	}
     return true;
 };
@@ -236,7 +245,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     
     [_L5] = LAYOUT(
     RCS(KC_C),     RCS(KC_K),        RCS(KC_O),
-    LGUI(KC_3),     TG(_L5),        XXXXXXX,
+    mst_call,     TG(_L5),        XXXXXXX,
     C(KC_SPC),     RCS(KC_M),        C(KC_SPC)
   ),
         
