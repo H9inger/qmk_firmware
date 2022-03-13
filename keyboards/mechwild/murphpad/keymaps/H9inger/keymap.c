@@ -41,7 +41,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-                  KC_F1,   KC_F2,   KC_F3,   KC_MPLY,
+                  KC_F1,   KC_F2,   TG(_RGB),   KC_MPLY,
 				          KC_CALC, KC_PSLS, KC_PAST, KC_PMNS,
                   KC_7,   KC_8,   KC_9,   KC_PLUS,
         KC_MUTE,  KC_4,   KC_5,   KC_6,   _______,
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_BSPC, XXXXXXX, S(KC_SCLN), KC_DEL,
                   KC_HOME, KC_UP, KC_END, XXXXXXX,
         _______,  KC_LEFT, LLOCK, KC_RGHT, _______,
-        _______,  KC_INS, KC_DOWN, KC_COMM, _______,
+        KC_TAB,  KC_INS, KC_DOWN, KC_COMM, _______,
         _______,  KC_SPC, _______, KC_LSFT, _______,
 
                   _______, _______, _______
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     ),
 	  [_RGB] = LAYOUT(
-                  _______,  _______, _______, _______,
+                  _______,  _______, TG(_RGB), _______,
                  _______,  _______, _______, _______,
                  RGB_HUD,  RGB_SPI, RGB_HUI, _______,
         _______, RGB_RMOD, RGB_TOG, RGB_MOD, _______,
@@ -114,7 +114,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 	}
 
 	bool oled_task_user(void) {
-		oled_set_cursor(0,6);
+		oled_set_cursor(0,0);
 
 		oled_write_ln_P(PSTR("Layer"), false);
 
