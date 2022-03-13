@@ -23,6 +23,21 @@ enum layer_names {
 	_RGB
 };
 
+//Macro definitions
+enum custom_keycodes {
+	LLOCK = SAFE_RANGE,
+    //Got idea from here: https://getreuer.info/posts/keyboards/layer-lock/index.html
+};
+
+#include "features/layer_lock.h"
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+	if (!process_layer_lock(keycode, record, LLOCK)) { return false; }
+
+	return true;
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
@@ -40,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  C(KC_A), C(KC_C), C(KC_V), _______,
                   KC_BSPC, XXXXXXX, S(KC_SCLN), KC_DEL,
                   KC_HOME, KC_UP, KC_END, XXXXXXX,
-        _______,  KC_LEFT, _______, KC_RGHT, _______,
+        _______,  KC_LEFT, LLOCK, KC_RGHT, _______,
         _______,  KC_INS, KC_DOWN, KC_COMM, _______,
         _______,  KC_SPC, _______, KC_LSFT, _______,
 
