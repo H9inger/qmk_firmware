@@ -116,7 +116,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 	bool oled_task_user(void) {
 		oled_set_cursor(0,0);
 
-		oled_write_ln_P(PSTR("Layer"), false);
+		oled_write_ln_P(PSTR("Layer:"), false);
 
     switch (get_highest_layer(layer_state)) {
         case _BASE:
