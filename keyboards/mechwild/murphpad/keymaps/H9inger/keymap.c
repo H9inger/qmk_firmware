@@ -41,7 +41,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-                  KC_F1,   KC_F2,   TG(_RGB),   KC_MPLY,
+                  XXXXXXX,   XXXXXXX,   TG(_RGB),   KC_MPLY,
 				          KC_CALC, KC_PSLS, KC_PAST, KC_PMNS,
                   KC_7,   KC_8,   KC_9,   KC_PLUS,
         KC_MUTE,  KC_4,   KC_5,   KC_6,   _______,
@@ -116,14 +116,14 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 	bool oled_task_user(void) {
 		oled_set_cursor(0,0);
 
-		oled_write_ln_P(PSTR("Layer:"), false);
+		oled_write_ln_P(PSTR("Layer"), false);
 
     switch (get_highest_layer(layer_state)) {
         case _BASE:
             oled_write_ln_P(PSTR("Base"), false);
             break;
         case _FN1:
-            oled_write_ln_P(PSTR("EDITS"), false);
+            oled_write_ln_P(PSTR("Edits"), false);
             break;
         case _FN2:
             oled_write_ln_P(PSTR("FN 2"), false);

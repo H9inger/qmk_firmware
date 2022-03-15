@@ -22,3 +22,9 @@
 // Increase layers to 6 for VIA
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
+//OLED stuff
+#define OLED_TIMEOUT 30000
+#define OLED_FADE_OUT
+#define OLED_FADE_OUT_INTERVAL 7
+#define OLED_SCRILL_TIMEOUT 10000
+#define OLED_BRIGHTNESS 190
