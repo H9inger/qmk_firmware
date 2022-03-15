@@ -189,7 +189,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case mst_call:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_DOWN(X_LGUI) "33" SS_UP(X_LGUI));
+			SEND_STRING(SS_LGUI("33") SS_TAP(X_ENT));
 		} else {
         		//when key with this macro assignment is released:
 		}
