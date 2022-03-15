@@ -141,4 +141,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     oled_write_ln_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
     return false;
 	}
+
+    void suspend_power_down_user(void) {  // shutdown oled when powered down to prevent OLED from showing Mercutio all the time
+        oled_off();
+        rgblight_disable_noeeprom();
+    }
+
+    void suspend_wakeup_init_user(void) {
+        rgblight_enable_noeeprom();
+    }
 #endif
