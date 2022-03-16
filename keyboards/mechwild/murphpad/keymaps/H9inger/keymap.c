@@ -86,6 +86,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+enum combo_events {
+  PRD_SLASH_AM,
+  PRD_ASTR_PM,
+  COMBO_LENGTH
+};
+uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
+
+const uint16_t PROGMEM am_time[] = {KC_DOT, KC_PSLS, COMBO_END};
+const uint16_t PROGMEM pm_time[] = {KC_DOT, KC_PAST, COMBO_END};
+
+combo_t key_combos[] = {
+  [PRD_SLASH_AM] = COMBO_ACTION(am_time),
+  [PRD_ASTR_PM] = COMBO_ACTION(pm_time),
+};
+/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case PRD_SLASH_AM:
+      if (pressed) {
+        SEND_STRING("am");
+      }
+      break;
+    case PRD_ASTR_PM:
+      if (pressed) {
+        SEND_STRING("pm");
+      }
+      break;
+  }
+}
+
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
     switch (index) {
