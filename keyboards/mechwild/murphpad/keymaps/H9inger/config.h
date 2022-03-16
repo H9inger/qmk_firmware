@@ -28,3 +28,6 @@
 #define OLED_FADE_OUT_INTERVAL 7
 #define OLED_SCRILL_TIMEOUT 10000
 #define OLED_BRIGHTNESS 190
+
+//Combo deinitions
+#define COMBO_TERM 5000
