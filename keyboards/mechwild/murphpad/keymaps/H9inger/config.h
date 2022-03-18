@@ -17,7 +17,7 @@
 #pragma once
 
 // 0 for standard encoder position.  Set to 1 for top right optional position
-#define ENCODER_DEFAULTACTIONS_INDEX 1
+#define ENCODER_DEFAULTACTIONS_INDEX 0
 
 // Increase layers to 6 for VIA
 //#define DYNAMIC_KEYMAP_LAYER_COUNT 6
