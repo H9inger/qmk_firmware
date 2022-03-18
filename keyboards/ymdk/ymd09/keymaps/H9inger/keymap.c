@@ -244,7 +244,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
     
     [_L5] = LAYOUT(
-    RCS(KC_C),     RCS(KC_K),        RCS(KC_O),
+    RCS(KC_P),     RCS(KC_K),        RCS(KC_O),
     mst_call,     TG(_L5),        XXXXXXX,
     C(KC_SPC),     RCS(KC_M),        C(KC_SPC)
   ),
