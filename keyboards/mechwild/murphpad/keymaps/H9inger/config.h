@@ -16,11 +16,11 @@
 
 #pragma once
 
-// Standard encoder position.  Set to 1 for top right optional position
+// 0 for standard encoder position.  Set to 1 for top right optional position
 #define ENCODER_DEFAULTACTIONS_INDEX 1
 
 // Increase layers to 6 for VIA
-#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+//#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 //OLED stuff
 #define OLED_TIMEOUT 20000
