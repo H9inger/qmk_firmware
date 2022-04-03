@@ -93,8 +93,8 @@ enum combo_events {
 };
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
 
-const uint16_t PROGMEM am_time[] = {KC_DOT, KC_PSLS, COMBO_END};
-const uint16_t PROGMEM pm_time[] = {KC_DOT, KC_PAST, COMBO_END};
+const uint16_t PROGMEM am_time[] = {KC_PLUS, KC_PSLS, COMBO_END};
+const uint16_t PROGMEM pm_time[] = {KC_PLUS, KC_PAST, COMBO_END};
 
 combo_t key_combos[] = {
   [PRD_SLASH_AM] = COMBO_ACTION(am_time),
