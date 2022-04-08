@@ -130,14 +130,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SEND_STRING("str" SS_TAP(X_ENT));}
       }
       break;
-	case n_win:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_TAP(X_LALT) "wn" SS_DELAY (200) SS_DOWN(X_LGUI)SS_TAP(X_DOWN)SS_UP(X_LGUI));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;
   case oflne:
 		if (record->event.pressed)  {
 			//when key with this macro assignment is pressed:
@@ -232,9 +224,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_L3] = LAYOUT(
-    KC_ESC,     XXXXXXX,        KC_PGUP,
-    n_win,    TG(_L3),      KC_PGDN,
-    KC_LCTL,     C(KC_0),        _______
+    KC_ESC,     KC_MS_BTN3,        KC_PGUP,
+    C(KC_5),    TG(_L3),      KC_PGDN,
+    KC_LCTL,     C(KC_0),        C(KC_4)
   ),
 
   [_L4] = LAYOUT(
