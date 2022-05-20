@@ -33,17 +33,18 @@ enum custom_keycodes {
   mid,      //mid-point o-snap
   str_sft,  //press for str macro hold for shift function
 	n_win,	//to open a new acrobat window and restore it down
-    oflne,  //set Microsoft Teams status to offline
-    avbl,   //set Microsoft Teams status to available w/o opening Teams first
-    away,   //set Microsoft Teams status to away
-    brb,    //set Microsoft Teams status to be right back
-    xdist,  //set Microsoft Teams status to do not disturb
-    avbl_2,   //set Microsoft Teams status to available
-    mst_call,   //focuses to Teams call
+  oflne,  //set Microsoft Teams status to offline
+  avbl,   //set Microsoft Teams status to available w/o opening Teams first
+  away,   //set Microsoft Teams status to away
+  brb,    //set Microsoft Teams status to be right back w/o opening Teams first
+  xdist,  //set Microsoft Teams status to do not disturb
+  avbl_2,   //set Microsoft Teams status to available
+  brb_2,    //set Microsoft Teams status to be right back
+  mst_call,   //focuses to Teams call
 };
 
 /* This is a little extra that was mentioned by u/riding_qwerty
-*   in this post: 
+*   in this post:
 *   https://www.reddit.com/r/olkb/comments/afm9ii/qmk_macro_in_modtap_keys/
 */
 uint16_t key_timer;
@@ -130,71 +131,71 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SEND_STRING("str" SS_TAP(X_ENT));}
       }
       break;
-  case oflne:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "off" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;
-  case avbl:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break; 
-  case away:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "away" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;
-  case brb:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LCTL("/") SS_DELAY (150) "brb" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;
-  case xdist:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "dnd" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;
-  case avbl_2:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;
-  case brb_2:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break;          
-  case mst_call:
-		if (record->event.pressed)  {
-			//when key with this macro assignment is pressed:
-			SEND_STRING(SS_LGUI("33") SS_TAP(X_ENT));
-		} else {
-        		//when key with this macro assignment is released:
-		}
-		break; 
-   	}
+    case oflne:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "off" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case avbl:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case away:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "away" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case brb:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LCTL("/") SS_DELAY (150) "brb" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case xdist:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "dnd" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case avbl_2:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case brb_2:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+    case mst_call:
+      if (record->event.pressed)  {
+        //when key with this macro assignment is pressed:
+        SEND_STRING(SS_LGUI("33") SS_TAP(X_ENT));
+      } else {
+              //when key with this macro assignment is released:
+      }
+      break;
+     }
     return true;
 };
 
@@ -242,18 +243,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,     XXXXXXX,        RGB_VAD,
     XXXXXXX,     XXXXXXX,        RGB_TOG
   ),
-    
+
     [_L5] = LAYOUT(
     RCS(KC_P),     RCS(KC_K),        RCS(KC_O),
     mst_call,     TG(_L5),        XXXXXXX,
     C(KC_SPC),     RCS(KC_M),        C(KC_SPC)
   ),
-        
+
     [_L6] = LAYOUT(
     oflne,     XXXXXXX,        avbl_2,
     away,     TG(_L6),        avbl,
     brb,     xdist,        brb_2
-  )          
+  )
 };
 
 void matrix_init_user(void) {
@@ -299,7 +300,7 @@ void matrix_scan_user(void) {
       case _L6:
 				rgblight_setrgb(0x00, 0x66, 0x0B);
 				//green
-				break;    
+				break;
 		}
 
 		old_layer = new_layer;
