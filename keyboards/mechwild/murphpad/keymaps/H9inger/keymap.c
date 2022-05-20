@@ -41,30 +41,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-                  XXXXXXX,   TG(_FN1),   TG(_RGB),   KC_MPLY,
+                  XXXXXXX,   TG(_FN2),   TG(_RGB),   KC_MPLY,
 				          KC_CALC, KC_PSLS, KC_PAST, KC_PMNS,
                   KC_7,   KC_8,   KC_9,   KC_PLUS,
         KC_ESC,  KC_4,   KC_5,   KC_6,   _______,
-        KC_BTN3, KC_1,   KC_2,   KC_3,   LT(_FN2,KC_ENT),
+        KC_BTN3, KC_1,   KC_2,   KC_3,   LT(_FN1,KC_ENT),
         KC_LCTL,  KC_0,   _______, KC_DOT, _______,
 
 				          KC_F5,   KC_F6,   KC_F7
 
     ),
     [_FN1] = LAYOUT(
-                 TG(_FN1),   XXXXXXX,   XXXXXXX,   KC_MPLY,
-				          KC_ESC, KC_QUOT, KC_PMNS, S(KC_QUOT),
-                  KC_7,   KC_8,   KC_9,   KC_PLUS,
-        KC_ESC,  KC_4,   KC_5,   KC_6,   _______,
-        KC_BTN3, KC_1,   KC_2,   KC_3,   LT(_FN2,KC_ENT),
-        KC_LCTL,  KC_0,   _______, KC_DOT, _______,
-        
-                  _______, _______, _______
-
-
-    ),
-    [_FN2] = LAYOUT(
-         C(KC_A), C(KC_C), C(KC_V), _______,
+                 C(KC_A), C(KC_C), C(KC_V), _______,
                   KC_BSPC, XXXXXXX, S(KC_SCLN), KC_DEL,
                   KC_HOME, KC_UP, KC_END, XXXXXXX,
         _______,  KC_LEFT, LLOCK, KC_RGHT, _______,
@@ -72,7 +60,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_SPC, _______, KC_LSFT, _______,
 
                   _______, _______, _______
-                 
+
+    ),
+    [_FN2] = LAYOUT(
+                  TG(_FN2),   XXXXXXX,   XXXXXXX,   KC_MPLY,
+				          KC_ESC, KC_QUOT, KC_PMNS, S(KC_QUOT),
+                  KC_7,   KC_8,   KC_9,   KC_PLUS,
+        KC_ESC,  KC_4,   KC_5,   KC_6,   _______,
+        KC_BTN3, KC_1,   KC_2,   KC_3,   LT(_FN1,KC_ENT),
+        KC_LCTL,  KC_0,   _______, KC_DOT, _______,
+        
+                  _______, _______, _______
+
     ),
 	  [_RGB] = LAYOUT(
                   _______,  _______, TG(_RGB), RESET,
@@ -155,10 +154,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             oled_write_ln_P(PSTR("Base"), false);
             break;
         case _FN1:
-            oled_write_ln_P(PSTR("Dims"), false);
+            oled_write_ln_P(PSTR("Edits"), false);
             break;
         case _FN2:
-            oled_write_ln_P(PSTR("Edits"), false);
+            oled_write_ln_P(PSTR("Dims"), false);
             break;
         case _RGB:
             oled_write_ln_P(PSTR("RGB"), false);
