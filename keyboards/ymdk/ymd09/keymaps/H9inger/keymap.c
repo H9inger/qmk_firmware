@@ -182,7 +182,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case brb_2:
       if (record->event.pressed)  {
         //when key with this macro assignment is pressed:
-        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "avail" SS_TAP(X_ENT));
+        SEND_STRING(SS_LGUI("3")SS_DELAY (150)SS_LCTL("/") SS_DELAY (150) "brb" SS_TAP(X_ENT));
       } else {
               //when key with this macro assignment is released:
       }
