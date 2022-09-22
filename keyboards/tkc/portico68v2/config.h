@@ -30,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DIODE_DIRECTION COL2ROW
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 3
+#define DEBOUNCE 4
 
 #define DRIVER_ADDR_1 0b0110000
 #define DRIVER_COUNT 1
